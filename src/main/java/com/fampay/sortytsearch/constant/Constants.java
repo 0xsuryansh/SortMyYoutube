@@ -14,4 +14,8 @@ public final class Constants {
         public static final String KEY = "key";
         public static final String ISO_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     }
+
+    public static class DelayConstants{
+        public static final int FIXED_DELAY = 600000;
+    }
 }
