@@ -28,7 +28,7 @@ public class SearchController {
         return true;
     }
 
-    @GetMapping("/videos")
+    @GetMapping("/fetchVideos")
     public List<Videos> getAllVideosWIthPaging(@RequestParam(defaultValue ="0") Integer pageNo,
                                                @RequestParam(defaultValue = "10") Integer pageSize){
         return searchService.getAllVideosPaginated(pageNo,pageSize);

@@ -26,10 +26,11 @@ public class IngestionImpl implements SearchResultIngestionService {
     @Autowired
     public IngestionImpl(YoutubeClient _client,
                          VideoRepository _repository,
-                         @Value("${searchQuery}") String SEARCH_QUERY){
+                         @Value("${searchQuery}") String query){
         client = _client;
         videoRepository = _repository;
         E_TAG = "default";
+        SEARCH_QUERY = query;
     }
     //Scheduled in this method
     @Override
