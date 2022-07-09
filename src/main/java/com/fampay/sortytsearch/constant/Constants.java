@@ -12,5 +12,6 @@ public final class Constants {
         public static final String DATE = "date";
         public static final String SNIPPET = "snippet";
         public static final String KEY = "key";
+        public static final String ISO_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     }
 }

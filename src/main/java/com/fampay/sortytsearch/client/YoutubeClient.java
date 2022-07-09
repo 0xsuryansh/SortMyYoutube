@@ -1,6 +1,7 @@
 package com.fampay.sortytsearch.client;
-import com.google.api.services.youtube.model.SearchListResponse;
-public interface YoutubeClient {
-    SearchListResponse fetchYoutubeSearchResults(String keywords);
 
+import com.fampay.sortytsearch.client.response.YoutubeSearchListResponse;
+
+public interface YoutubeClient {
+    YoutubeSearchListResponse fetchYoutubeSearchResults(String keywords);
 }
