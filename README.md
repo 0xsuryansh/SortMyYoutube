@@ -51,6 +51,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    Method : GET
    Description : Optimized Search API which also supports partial match for search      query in either video title or description
    ```
+   Reponse :
    video_id
    videoTitle
    description
@@ -64,6 +65,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    Method : GET
    Description : Paginated response of the stored video details 
    ```
+   Reponse :
    video_id
    videoTitle
    description
