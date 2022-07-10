@@ -55,7 +55,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
 
 ## APIs
   	
-1. Search API
+### Search API
 -Endpoint : /search?q=<Search String>
 -Method : GET
 -Description : Optimized Search API which also supports partial match for search query in either video title or description
@@ -70,7 +70,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    channelTitle
    ```
    
-2. Fetch API (Paginate)
+### Fetch API (Paginate)
 -Endpoint : /fetchVideos?pageNo=<Page Number>&pageSize=<Page Size>
 -Method : GET
 -Description : Paginated response of the stored video details 
@@ -86,7 +86,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    ```
    
   
-3. Fetch Videos from YT and Store
+### Fetch Videos from YT and Store
    -Endpoint : /video
    -Method : GET
    -Description : Explicit API for calling the youtube API and saving data to db
