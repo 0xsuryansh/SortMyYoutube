@@ -43,10 +43,10 @@ docker run -d 27017:27017 —name ytfammongodb mongo:latest
 5. *.env file* :
 
 ```
-			YT_ACCESS_KEYS  : API access keys comma (,) saparated
-			MONGO_DB_HOST : MongoDb container name
+			YT_ACCESS_KEYS  : <API access keys comma (,) saparated>
+			MONGO_DB_HOST : < MongoDb container name>
 			MONGO_DB_PORT : 2701
-			SEARCH_QUERY : I chose CRICKET, feel free to choose whatever you like! :)
+			SEARCH_QUERY : <I chose CRICKET, feel free to choose whatever you like! :)>
 
 ```
 6. Run `docker build -t springboot-sortytsearch:1.0 .` to build docker image from Dockerfile
