@@ -38,7 +38,7 @@ public class IngestionImpl implements SearchResultIngestionService {
     @Override
     public void asyncVideoUpdate() {
         YoutubeSearchListResponse response = client.fetchYoutubeSearchResults(SEARCH_QUERY);
-        if(Objects.isNull(response)){
+        if(Objects.isNull(response) || Objects.isNull(response.getItems())){
             return;
         }
         List<Videos> videos = new ArrayList<>();
