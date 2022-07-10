@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableRetry
 @EnableScheduling
+@EnableRetry
 @EnableSwagger2
 public class SortytsearchApplication {
 	public static void main(String[] args) {SpringApplication.run(SortytsearchApplication.class, args);}

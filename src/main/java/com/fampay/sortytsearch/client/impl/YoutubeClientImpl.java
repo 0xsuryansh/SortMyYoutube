@@ -78,7 +78,7 @@ public class YoutubeClientImpl extends BaseHttpClient implements YoutubeClient {
             /**The exception is thrown again for @Retryable*/
             throw ex;
         }
-        return Objects.isNull(response)? response.getBody() : new YoutubeSearchListResponse();
+        return !Objects.isNull(response)? response.getBody() : new YoutubeSearchListResponse();
     }
 
     private String getIsoFormatDate(LocalDateTime time) {
