@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableScheduling
 @EnableRetry
 public class SortytsearchApplication {
 	public static void main(String[] args) {SpringApplication.run(SortytsearchApplication.class, args);}

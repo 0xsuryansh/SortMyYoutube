@@ -34,7 +34,6 @@ public class IngestionImpl implements SearchResultIngestionService {
     }
     //Scheduled in this method
     @Override
-    @Scheduled(fixedDelay = FIXED_DELAY)
     public void asyncVideoUpdate() {
         YoutubeSearchListResponse response = client.fetchYoutubeSearchResults(SEARCH_QUERY);
         if(response==null){
