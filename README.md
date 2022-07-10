@@ -9,7 +9,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 ### Project Scope:
 - Scheduled (async) calls to YouTube API continuously in background and storing data on our end
 - Paginated response of the stored video details (Video title, description, publishing datetime, thumbnails URLs)
-- Caching and conditional retrieval – The application is caching the most recent `ETag` associated with the queried resource if the resource has changed, the   API returns the modified resource and the `ETag` associated with that version of the resource. If the resource has not changed, the API returns an HTTP 304   response (Not Modified), which indicates that the resource has not changed. This helps in reducing latency and bandwidth usage.
+- Caching and conditional retrieval – The application is caching the most recent `ETag` associated with the queried resource if the resource has changed, the downstreap API call to youtube returns the modified resource and the `ETag` associated with that version of the resource. If the resource has not changed, the downstreap API call to youtube returns an HTTP 304 response (Not Modified), which indicates that the resource has not changed. This helps in reducing latency and bandwidth usage.
 - Optimized Search API which also supports partial match for search query in either video title or description
 - Dashboard to view the stored videos with options to search
 
