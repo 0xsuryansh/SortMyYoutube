@@ -28,9 +28,9 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 ```
 			YT_ACCESS_KEYS  : API access keys comma (,) saparated
-			MONGO_DB_HOST : 
-			MONGO_DB_PORT :
-			SEARCH_QUERY :
+			MONGO_DB_HOST : MongoDb container name
+			MONGO_DB_PORT : 2701
+			SEARCH_QUERY : I chose CRICKET, Feel free to choose whatever you like
 
 ```
 6. Run `docker build -t springboot-sortytsearch:1.0 .` to build docker image from Dockerfile
