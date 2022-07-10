@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class IngestionImpl implements SearchResultIngestionService {
@@ -37,19 +38,19 @@ public class IngestionImpl implements SearchResultIngestionService {
     @Override
     public void asyncVideoUpdate() {
         YoutubeSearchListResponse response = client.fetchYoutubeSearchResults(SEARCH_QUERY);
-        if(response==null){
+        if(Objects.isNull(response)){
             return;
         }
         List<Videos> videos = new ArrayList<>();
         for (Item item:
-             response.items) {
-            String id = item.id.videoId;
-            String videoTitle = item.snippet.title;
-            String description = item.snippet.description;
-            Date publishedDate = item.snippet.publishedAt;
-            String url = item.snippet.thumbnails.mydefault.url;
-            String channelId = item.snippet.channelId;
-            String channelTitle = item.snippet.channelTitle;
+             response.getItems()) {
+            String id = item.getId().getVideoId();
+            String videoTitle = item.getSnippet().getTitle();
+            String description = item.getSnippet().getDescription();
+            Date publishedDate = item.getSnippet().getPublishedAt();
+            String url = item.getSnippet().getThumbnails().getMydefault().getUrl();
+            String channelId = item.getSnippet().getChannelId();
+            String channelTitle = item.getSnippet().getChannelTitle();
             videos.add(new Videos(id,videoTitle,description,publishedDate,url,channelId,channelTitle));
         }
         videoRepository.saveAll(videos);
