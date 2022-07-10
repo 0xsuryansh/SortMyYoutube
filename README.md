@@ -40,4 +40,3 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 ## Dashboard 
 Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
 
-## APIs
