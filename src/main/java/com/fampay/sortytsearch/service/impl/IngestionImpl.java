@@ -8,14 +8,11 @@ import com.fampay.sortytsearch.repository.VideoRepository;
 import com.fampay.sortytsearch.service.SearchResultIngestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static com.fampay.sortytsearch.constant.Constants.DelayConstants.FIXED_DELAY;
 
 @Service
 public class IngestionImpl implements SearchResultIngestionService {
