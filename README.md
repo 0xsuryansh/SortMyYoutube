@@ -39,6 +39,6 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 ## Dashboard 
 Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
-![alt txt](Screenshot 2022-07-10 at 3.56.49 PM.png)
+![alt txt](./Screenshot 2022-07-10 at 3.56.49 PM.png)
 
 ## APIs
