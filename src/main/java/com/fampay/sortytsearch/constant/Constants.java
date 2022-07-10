@@ -16,6 +16,6 @@ public final class Constants {
     }
 
     public static class DelayConstants{
-        public static final int FIXED_DELAY = 600000;
+        public static final int FIXED_DELAY = 12000;
     }
 }
