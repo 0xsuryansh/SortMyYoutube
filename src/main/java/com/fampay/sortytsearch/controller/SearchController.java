@@ -34,5 +34,9 @@ public class SearchController {
         return searchService.getAllVideosPaginated(pageNo,pageSize);
     }
 
+    @GetMapping("/search")
+    public List<Videos> searchVideo(@RequestParam String q){
+        return  searchService.search(q);
+    }
 
 }
