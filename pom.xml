@@ -76,6 +76,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>sortytsearch</finalName>
 	</build>
 
 </project>
