@@ -14,5 +14,8 @@ services:
       - ytfammongodb
     environment:
       YT_ACCESS_KEYS : "${YT_ACCESS_KEYS}"
+      MONGO_DB_HOST  : "${MONGO_DB_HOST}"
+      MONGO_DB_PORT  : "${MONGO_DB_PORT}"
+      SEARCH_QUERY   : "${SEARCH_QUERY}"
 
 
