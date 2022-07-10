@@ -34,12 +34,11 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 1. Clone the project
 `git clone https://github.com/suryanshsh/SortMyYoutube.git`
 2. For MongoDB : run command
-```
-docker pull mongo:latest
+`docker pull mongo:latest`
+and then
+`docker run -d 27017:27017 —name ytfammongodb mongo:latest`
 
-docker run -d 27017:27017 —name ytfammongodb mongo:latest 
 
-```
 4. Run ```./mvnw clean install -DskipTests``` to build ***.jar*** of the code repository 
 5. *.env file* :
 
