@@ -3,6 +3,7 @@ package com.fampay.sortytsearch.dbModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -22,6 +23,8 @@ public class Videos {
     @TextIndexed
     private String description;
 
+    /**for fast paginated query*/
+    @Indexed
     private Date publishedDateTime;
 
     private String thumbnailUrl;

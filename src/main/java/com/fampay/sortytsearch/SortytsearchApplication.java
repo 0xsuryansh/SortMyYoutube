@@ -8,9 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableRetry
+@EnableScheduling
+@EnableSwagger2
 public class SortytsearchApplication {
 	public static void main(String[] args) {SpringApplication.run(SortytsearchApplication.class, args);}
 	@Bean

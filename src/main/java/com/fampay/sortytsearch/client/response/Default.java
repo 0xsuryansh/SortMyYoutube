@@ -1,7 +1,10 @@
 package com.fampay.sortytsearch.client.response;
 
+import lombok.Data;
+
+@Data
 public class Default{
-    public String url;
-    public int width;
-    public int height;
+    private String url;
+    private int width;
+    private int height;
 }

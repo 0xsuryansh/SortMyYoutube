@@ -1,12 +1,15 @@
 package com.fampay.sortytsearch.client.response;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 
+@Data
 public class YoutubeSearchListResponse {
-    public String kind;
-    public String etag;
-    public String nextPageToken;
-    public String regionCode;
-    public PageInfo pageInfo;
-    public ArrayList<Item> items;
+    private String kind;
+    private String etag;
+    private String nextPageToken;
+    private String regionCode;
+    private PageInfo pageInfo;
+    private ArrayList<Item> items;
 }

@@ -1,6 +1,9 @@
 package com.fampay.sortytsearch.client.response;
 
+import lombok.Data;
+
+@Data
 public class Id{
-    public String kind;
-    public String videoId;
+    private String kind;
+    private String videoId;
 }

@@ -1,14 +1,17 @@
 package com.fampay.sortytsearch.client.response;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class Snippet{
-    public Date publishedAt;
-    public String channelId;
-    public String title;
-    public String description;
-    public Thumbnails thumbnails;
-    public String channelTitle;
-    public String liveBroadcastContent;
-    public Date publishTime;
+    private Date publishedAt;
+    private String channelId;
+    private String title;
+    private String description;
+    private Thumbnails thumbnails;
+    private String channelTitle;
+    private String liveBroadcastContent;
+    private Date publishTime;
 }

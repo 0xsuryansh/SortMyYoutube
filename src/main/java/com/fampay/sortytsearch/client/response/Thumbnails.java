@@ -1,10 +1,12 @@
 package com.fampay.sortytsearch.client.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class Thumbnails{
     @JsonProperty("default")
-    public Default mydefault;
-    public Medium medium;
-    public High high;
+    private Default mydefault;
+    private Medium medium;
+    private High high;
 }

@@ -17,6 +17,7 @@ import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import static com.fampay.sortytsearch.constant.Constants.YoutubeRequestConstants.*;
 
@@ -24,6 +25,13 @@ import static com.fampay.sortytsearch.constant.Constants.YoutubeRequestConstants
 public class YoutubeClientImpl extends BaseHttpClient implements YoutubeClient {
 
     private final YoutubeConfig youtubeConfig;
+
+    /** @DevNotice : E-tag is cached in the execution context
+     * If the resource has changed, the downstream API returns the modified resource and the ETag associated with that version of the resource.
+     * If the resource has not changed, the API returns an HTTP 304 response
+     * which indicates that the resource has not changed.
+     * This helps reduce latency and bandwidth usage by serving cached resources in this manner.
+     **/
     private String E_TAG_CACHED;
 
     @Autowired
@@ -34,11 +42,16 @@ public class YoutubeClientImpl extends BaseHttpClient implements YoutubeClient {
         E_TAG_CACHED = "default";
     }
 
+    /**
+     * @param keywords
+     * @return reponse from youtube API
+     */
     @Override
-    @Retryable(maxAttempts = 2, value = {ForbiddenQuotaException.class})
+    @Retryable(maxAttempts = 1, value = {ForbiddenQuotaException.class})
     public YoutubeSearchListResponse fetchYoutubeSearchResults(String keywords) {
         String accessKey = youtubeConfig.getAccessKeyQueue().peek();
         LocalDateTime currentDateTime = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+        ResponseEntity<YoutubeSearchListResponse> response = null;
         try {
             URI uri = UriComponentsBuilder.fromUriString(youtubeConfig.getBaseUrl()).
                     path(youtubeConfig.getSearchListEndpoint()).
@@ -52,19 +65,20 @@ public class YoutubeClientImpl extends BaseHttpClient implements YoutubeClient {
             headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
             headers.setIfNoneMatch(E_TAG_CACHED);
             RequestEntity<?> requestEntity = new RequestEntity<>(headers, HttpMethod.GET, uri);
-            ResponseEntity<YoutubeSearchListResponse> response = singleRequest(requestEntity, YoutubeSearchListResponse.class);
-            E_TAG_CACHED = response.getBody().etag;
-            return response.getBody();
+            response = singleRequest(requestEntity, YoutubeSearchListResponse.class);
+            E_TAG_CACHED = response.getBody().getEtag();
         } catch (ClientHttpResponseException ex) {
             if (ex.getHttpStatus().equals(HttpStatus.NOT_MODIFIED)) {
                 return null;
             }
-            //handle
-            return null;
         } catch (ForbiddenQuotaException ex) {
+            /**Catching this exception means that API key's quota is exhausted
+             * we use then next key in the queue*/
             youtubeConfig.getAccessKeyQueue().poll();
+            /**The exception is thrown again for @Retryable*/
             throw ex;
         }
+        return Objects.isNull(response)? response.getBody() : new YoutubeSearchListResponse();
     }
 
     private String getIsoFormatDate(LocalDateTime time) {
