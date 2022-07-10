@@ -55,9 +55,9 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
 
 ## APIs
   	
-1. Endpoint : /search?q=<Search String>
-   Method : GET
-   Description : Optimized Search API which also supports partial match for search query in either video title or description
+1. -Endpoint : /search?q=<Search String>
+   -Method : GET
+   -Description : Optimized Search API which also supports partial match for search query in either video title or description
    ```
    Reponse :
    video_id
@@ -69,9 +69,9 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    channelTitle
    ```
    
-2. Endpoint : /fetchVideos?pageNo=<Page Number>&pageSize=<Page Size>
-   Method : GET
-   Description : Paginated response of the stored video details 
+2. -Endpoint : /fetchVideos?pageNo=<Page Number>&pageSize=<Page Size>
+   -Method : GET
+   -Description : Paginated response of the stored video details 
    ```
    Reponse :
    video_id
@@ -84,9 +84,9 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    ```
    
   
-3. Endpoint : /video
-   Method : GET
-   Description : Explicit API for calling the youtube API and saving data to db
-   This API can be hit by an external CRON job on AWS Lambda for removing dependency    on @Scheduled background task which can lead to same API calls.
+3. -Endpoint : /video
+   -Method : GET
+   -Description : Explicit API for calling the youtube API and saving data to db
+   This API can be hit by an external CRON job on AWS Lambda for removing dependency on @Scheduled background task which can lead to same API calls.
    
 
