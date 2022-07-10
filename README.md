@@ -35,9 +35,6 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 `git clone https://github.com/suryanshsh/SortMyYoutube.git`
 2. For MongoDB : run command
 `docker pull mongo:latest`
-and then
-`docker run -d 27017:27017 —name ytfammongodb mongo:latest`
-
 
 4. Run ```./mvnw clean install -DskipTests``` to build ***.jar*** of the code repository 
 5. *.env file* :
@@ -60,7 +57,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
   	
 1. Endpoint : /search?q=<Search String>
    Method : GET
-   Description : Optimized Search API which also supports partial match for search      query in either video title or description
+   Description : Optimized Search API which also supports partial match for search query in either video title or description
    ```
    Reponse :
    video_id
