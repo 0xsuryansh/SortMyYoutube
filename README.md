@@ -12,6 +12,17 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 - Optimized Search API which also supports partial match for search query in either video title or description
 - Dashboard to view the stored videos with options to search
 
+### Proposed Solution :
+- For async calls to Youtube API Annotation @Scheduled annotation marks a method to be scheduled 
+- Processing of @Scheduled annotations is performed by registering a ScheduledAnnotationBeanPostProcessor
+
+- For paginated response : A Page<T> instance is queried from mongo db, in addition to having the list of Videos, also knows about the total number of available pages. It triggers an additional count query to achieve it.
+
+- For optimized search TextIndex and SearchIndex are created through code on mongoDb atlas for fuzzy search  : relevant search results regardless of typos or spelling errors
+
+- Swagger is used as an alternate to dashboard, the APIs documentation and execution can be easily observed.
+
+
 ### Tech Stack
 - **Java 8**
 - **Spring Boot 2.7.1**
