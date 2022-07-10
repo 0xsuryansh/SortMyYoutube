@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,8 +22,8 @@ public class SearchImpl implements SearchService {
 
     @Override
     public List<Videos> search(String searchKey) {
-
-        return null;
+        TextCriteria search = TextCriteria.forDefaultLanguage().matching(searchKey);
+        return repository.findAllBy(search);
     }
 
     @Override
