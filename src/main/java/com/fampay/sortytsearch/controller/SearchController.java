@@ -28,12 +28,23 @@ public class SearchController {
         return true;
     }
 
+    /**
+     * Route/Controller
+     * @param pageNo page number
+     * @param pageSize page size
+     * @return paginated response
+     */
     @GetMapping("/fetchVideos")
     public List<Videos> getAllVideosWIthPaging(@RequestParam(defaultValue ="0") Integer pageNo,
                                                @RequestParam(defaultValue = "10") Integer pageSize){
         return searchService.getAllVideosPaginated(pageNo,pageSize);
     }
 
+    /**
+     * Returns videos matching search string on video title and description
+     * @param q search string
+     * @return list of videos matching the search string
+     */
     @GetMapping("/search")
     public List<Videos> searchVideo(@RequestParam String q){
         return  searchService.search(q);

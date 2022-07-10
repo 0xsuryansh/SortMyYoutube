@@ -15,5 +15,12 @@ public interface VideoRepository extends MongoRepository<Videos,String> {
     Videos findVideoByTitle(String title);
     @Query("{description:'?0'}")
     Videos findVideoByDescription(String description);
+
+    /**
+     * text criteria tokenizes the search string
+     * for fuzzy search against the TextIndexed fields
+     * @param criteria
+     * @return
+     */
     List<Videos> findAllBy(TextCriteria criteria);
 }

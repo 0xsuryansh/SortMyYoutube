@@ -21,7 +21,6 @@ import static com.fampay.sortytsearch.constant.Constants.DelayConstants.FIXED_DE
 public class IngestionImpl implements SearchResultIngestionService {
     private final YoutubeClient client;
     private final VideoRepository videoRepository;
-    private static String E_TAG;
     private static String SEARCH_QUERY;
     @Autowired
     public IngestionImpl(YoutubeClient _client,
@@ -29,10 +28,15 @@ public class IngestionImpl implements SearchResultIngestionService {
                          @Value("${searchQuery}") String query){
         client = _client;
         videoRepository = _repository;
-        E_TAG = "default";
         SEARCH_QUERY = query;
     }
-    //Scheduled in this method
+
+    /**
+     * YouTube API is continuously called in background (async)
+     * with some interval (say 10 seconds) for fetching the latest videos for a
+     * predefined search query and stores the data of videos
+     * in a database.
+     */
     @Override
     public void asyncVideoUpdate() {
         YoutubeSearchListResponse response = client.fetchYoutubeSearchResults(SEARCH_QUERY);

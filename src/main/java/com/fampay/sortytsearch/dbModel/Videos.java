@@ -14,7 +14,8 @@ import java.util.Date;
 public class Videos {
     @Id
     private String id;
-
+    /**TextIndexed is used to make search
+     * index for fuzzy search of mongo db atlas*/
     @TextIndexed
     private String videoTitle;
 

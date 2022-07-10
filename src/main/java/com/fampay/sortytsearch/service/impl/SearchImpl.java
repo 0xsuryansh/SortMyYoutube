@@ -20,12 +20,25 @@ public class SearchImpl implements SearchService {
         repository = _repository;
     }
 
+    /**
+     * fuzzy search on video title and description fields
+     * for a given search string
+     * @param searchKey search string to return results for
+     * @return
+     */
     @Override
     public List<Videos> search(String searchKey) {
         TextCriteria search = TextCriteria.forDefaultLanguage().matching(searchKey);
         return repository.findAllBy(search);
     }
 
+    /**
+     * Returns the stored video data in a paginated
+     * response sorted in descending order of published datetime.
+     * @param pageNo
+     * @param pageSize
+     * @return paginated response in chronologically descending order of publishing
+     */
     @Override
     public List<Videos> getAllVideosPaginated(int pageNo, int pageSize) {
         PageRequest pageRequest = PageRequest.of(pageNo,pageSize,Sort.by("publishedDateTime").descending());

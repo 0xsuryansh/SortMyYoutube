@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthController {
     @Autowired
     private YoutubeClient youtubeClient;
+
+    /**
+     * Health check
+     * @return if application is up succesfully
+     */
     @GetMapping("health")
     public String healthCheck(){
         return "Working!";

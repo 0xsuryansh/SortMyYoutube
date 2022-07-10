@@ -15,6 +15,12 @@ public class DataIngestionJob {
         ingestionService = _searchResultIngestionService;
     }
 
+    /**
+     * @Scheduled annotation can be used to configure and schedule tasks.
+     * In this case, the duration between the end
+     * of the last execution and the start of the next execution is fixed.
+     * The task always waits until the previous one is finished.
+     */
     @Scheduled(fixedDelay = FIXED_DELAY)
     public void dataPullSchedular(){
         ingestionService.asyncVideoUpdate();
