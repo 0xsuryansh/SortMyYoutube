@@ -56,7 +56,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
 ## APIs
   	
 ### Search API
-- Endpoint : /search?q=<Search String>
+- Endpoint : /search?q=`<Search String>`
 - Method : GET
 - Description : Optimized Search API which also supports partial match for search query in either video title or description
    ```
@@ -71,7 +71,7 @@ Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
    ```
    
 ### Fetch API (Paginate)
-- Endpoint : /fetchVideos?pageNo=<Page Number>&pageSize=<Page Size>
+- Endpoint : /fetchVideos?pageNo=`<Page Number>`&pageSize=`<Page Size>`
 - Method : GET
 - Description : Paginated response of the stored video details 
    ```
