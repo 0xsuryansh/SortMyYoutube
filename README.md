@@ -26,7 +26,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 ### Improvement Scope : Cursor Based Pagenation
 We can make use of a continuation token:
-- On each request a `continuation_token` will be returned which will be a encrypted string representing the `<MD5 Hash of previous qury string>_``<id of the last returned object>_``<Sort field (here published_at)>_``<Sort field value>`
+- On each request a `continuation_token` will be returned which will be a encrypted string representing the `<MD5 Hash of previous qury string>_<id of the last returned object>_<Sort field (here published_at)>_<Sort field value>`
 Flow :
 - On initial request a blank `continuation_token` will be passsed to the request parameter
 - On retireval from DB a `continuation_token` will be cretated which will look like `a5b2111b666cd3bd5689effc1eda29b6_5ed6a45d0038622837ba60da_publishedAt_1590585400521` this value will be encrpted and sent back along with the response
