@@ -48,7 +48,7 @@ Using this we can make use of Range queries which can use indexes to avoid scann
 ### Tech Stack
 - **Java 8**
 - **Spring Boot 2.7.1**
-- **Mongo DB**
+- **Mongo DB** [MongoDB is a widely used document-based database. It stores the documents in JSON objects, this will be a good choice bacause in our ue case we can a lot of reads and write operations from your application and it also supports extensive queries and full text search]
 - **Docker**
 
 ### Instructions
