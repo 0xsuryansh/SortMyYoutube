@@ -1,5 +1,5 @@
 ## SortMyYoutube
-Fampay Assignment
+Fampay Assignment \n
 Note : To run the project directly skip to the Instructions section of this README
 
 ### Project Goal
