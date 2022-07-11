@@ -1,6 +1,6 @@
 ## SortMyYoutube
-Fampay Assignment \n
-Note : To run the project directly skip to the Instructions section of this README
+Fampay Assignment 
+- Note : To run the project directly skip to the `Instructions` section of this README
 
 ### Project Goal
 To make an API to fetch latest videos sorted in reverse chronological order of the publishing date-time from YouTube for a given search query in paginated response
@@ -72,7 +72,7 @@ Using this we can make use of Range queries which can use indexes to avoid scann
 
 
 ## Dashboard 
-Link to Swagger dashboard : http://localhost:8080/swagger-ui.html
+Link to Swagger dashboard : http://localhost:8080/swagger-ui.html, screenshot is attached int the repo
 
 ## APIs
   	
