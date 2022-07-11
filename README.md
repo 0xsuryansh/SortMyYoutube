@@ -1,5 +1,6 @@
 ## SortMyYoutube
 Fampay Assignment
+Note : To run the project directly skip to the Instructions section of this README
 
 ### Project Goal
 To make an API to fetch latest videos sorted in reverse chronological order of the publishing date-time from YouTube for a given search query in paginated response
