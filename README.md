@@ -14,7 +14,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 - Dashboard to view the stored videos with options to search
 
 ### Proposed Solution :
-- For async calls to Youtube API Annotation @Scheduled annotation marks a method to be scheduled 
+- For async calls to Youtube API @Scheduled annotation marks a method to be scheduled 
 - Processing of @Scheduled annotations is performed by registering a ScheduledAnnotationBeanPostProcessor
 
 - For paginated response : A `Page<T>` instance is queried from mongo db, in addition to having the list of Videos, this also knows about the total number of available pages. It triggers an additional count query to achieve it.
