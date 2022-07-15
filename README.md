@@ -24,7 +24,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 - Swagger is used as an alternate to dashboard, the APIs documentation and execution can be easily observed.
 
-### Improvement Scope : Cursor Based Pagenation
+### Cursor Based Pagenation
 We can make use of a continuation token:
 - On each request a `continuation_token` will be returned which will be a encrypted string representing the `<MD5 Hash of previous qury string>_<id of the last returned object>_<Sort field (here published_at)>_<Sort field value>`
 Flow :
